@@ -1,1 +1,40 @@
 
+version: 1
+targets:
+photos: "Photos/{year}/{month}/"
+videos: "Videos/{year}/{month}/"
+docs: "Documents/{ext}/"
+audio: "Audio/{year}/"
+code: "Code/{ext}/"
+other: "Other/{ext}/"
+
+
+duplicates:
+strategy: keep_newest # keep_oldest | move_to | skip
+move_to: "Duplicates/"
+
+
+conflict:
+naming: suffix # suffix | timestamp | folderize
+
+
+# Basic rules
+rules:
+- if: "type == 'image' and exif_date"
+to: "photos"
+- if: "type == 'image'"
+to: "Photos/{year}/{month}/"
+- if: "type == 'video'"
+to: "videos"
+- if: "ext in ['pdf','docx','xlsx','pptx','txt']"
+to: "docs"
+- if: "type == 'audio'"
+to: "audio"
+- if: "type == 'code'"
+to: "code"
+- if: "true"
+to: "other"
+preview:
+limit: 5000
+safety:
+allow_cross_drive: false
