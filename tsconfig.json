@@ -1,1 +1,13 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "target": "ESNext"
+  },
+  "include": ["src"]
+}
 
+//Them vao de fix loi gach chan do
