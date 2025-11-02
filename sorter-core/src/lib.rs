@@ -22,11 +22,12 @@ pub struct Transaction {
 }
 
 /// Copy file fallback khi rename thất bại
-pub fn move_file(from: &Path, to: &Path, opts: &CopyOptions) -> Result<()> {
-    fs_extra::copy_items(&[from], to, opts)?;
-    fs::remove_file(from)?;
+pub fn move_file(from: &Path, to: &Path, opts: &fs_extra::file::CopyOptions) -> anyhow::Result<()> {
+    fs_extra::file::copy(from, to, opts)?;
+    std::fs::remove_file(from)?;
     Ok(())
 }
+
 
 /// Áp dụng kế hoạch sắp xếp: di chuyển file theo items
 pub fn apply_plan(root: &Path, items: &[TransactionItem], opts: &CopyOptions) -> Result<Transaction> {
