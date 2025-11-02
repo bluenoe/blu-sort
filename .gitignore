@@ -1,1 +1,27 @@
-node_modules
+# Node
+node_modules/
+dist/
+.vite/
+.env
+.env.local
+.env.*
+!.env.example
+
+# PNPM store
+.pnpm-store/
+
+# Rust / Tauri
+src-tauri/target/
+src-tauri/Cargo.lock
+*.pdb
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# System
+.DS_Store
+Thumbs.db
