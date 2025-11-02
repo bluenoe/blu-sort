@@ -1,27 +1,28 @@
-# Node
+# Node (frontend)
 node_modules/
 dist/
 .vite/
+.pnpm-store/
+
+# Rust (Tauri + library)
+target/
+src-tauri/target/
+sorter-core/target/
+**/*.pdb
+
+# Build outputs
+*.log
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Env files
 .env
 .env.local
 .env.*
 !.env.example
 
-# PNPM store
-.pnpm-store/
-
-# Rust / Tauri
-src-tauri/target/
-src-tauri/Cargo.lock
-*.pdb
-
-# Logs
-npm-debug.log*
-pnpm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# System
+# System files
 .DS_Store
 Thumbs.db
